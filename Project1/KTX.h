@@ -15,7 +15,6 @@ private:
     vector <Day> DsDay;
     int SoLuongDay;
 public:
-
     int getSoLuongDay();
     void setSoLuongDay(int soLuongDay);
 
@@ -27,9 +26,6 @@ public:
     void XuatDsSinhVienTheoBangChuCai();
     void XuatDsSinhVienTheoDayPhong();
     void XemDanhSachSV2();
-
-    void NhapDanhSachDay();
-    void XuatDsDay();
 
     void XuatDsPhongTrong(string gioiTinh, int& dem);
 

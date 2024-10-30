@@ -379,21 +379,23 @@ void KTX::XemThongTinCacPhong() {
 	}
 }
 void KTX::NhapSoDien() {
-	float soDienMoi;
+	float soDien;
 	cout << "--- Nhap so dien ---" << endl;
 	for (int i = 0; i < DsDay.size(); i++) {
 		vector<Phong>* danhSachPhongPtr = DsDay[i].getDsPhongPtr();
 		for (int j = 0; j < danhSachPhongPtr->size(); j++) {
 			cout << endl << DsDay[i].getTenDay() << "-" << danhSachPhongPtr->at(j).getTenPhong();
-			danhSachPhongPtr->at(j).setSoDienCu(danhSachPhongPtr->at(j).getSoDienMoi());
-			cout << "\tSo dien cu: " << danhSachPhongPtr->at(j).getSoDienCu() << endl;
+			cout << "\tSo dien cu: " << danhSachPhongPtr->at(j).getSoDienCu() << "\tSo dien moi: "<<danhSachPhongPtr->at(j).getSoDienMoi()<<"\t\tTrang Thai:";
+			if (danhSachPhongPtr->at(j).getTrangThai() == true) cout << "Da dong" << endl;
+			else cout << "Chua dong" << endl;
+			if (danhSachPhongPtr->at(j).getTrangThai() == true) danhSachPhongPtr->at(j).setSoDienCu(danhSachPhongPtr->at(j).getSoDienMoi());
 			do {
-				cout << "->Nhap so dien moi: ";
-				cin >> soDienMoi; cin.ignore();
-				if (soDienMoi < danhSachPhongPtr->at(j).getSoDienCu()) cout << "So dien da nhap khong duoc nho hon so dien cu!" << "Vui long nhap lai!" << endl << endl;
-			} while (soDienMoi < danhSachPhongPtr->at(j).getSoDienCu());
+				cout << "->Nhap so dien thang nay: ";
+				cin >> soDien; cin.ignore();
+				if (soDien < danhSachPhongPtr->at(j).getSoDienMoi()) cout << "So dien da nhap khong duoc nho hon so dien thang truoc!" << "Vui long nhap lai!" << endl << endl;
+			} while (soDien < danhSachPhongPtr->at(j).getSoDienMoi());
 
-			danhSachPhongPtr->at(j).setSoDienMoi(soDienMoi);
+			danhSachPhongPtr->at(j).setSoDienMoi(soDien);
 			danhSachPhongPtr->at(j).setTrangThai(false);
 			danhSachPhongPtr->at(j).TinhTienDien();
 		}
@@ -504,7 +506,10 @@ void KTX::ThanhToanTienDien() {
 	};
 
 	DsDay[TenDayInt(tenDay)].ThanhToanTienDien(TenPhongInt(tenPhong));
+	vector<Phong>* danhSachPhongPtr = DsDay[TenDayInt(tenDay)].getDsPhongPtr();
+	danhSachPhongPtr->at(TenPhongInt(tenPhong)).setTrangThai(true);
 	cout << "Thanh toan thanh cong!" << endl << endl;
+
 }
 
 void KTX::DangKySV() {
