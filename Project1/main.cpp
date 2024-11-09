@@ -10,7 +10,7 @@
 #include "KTX.h"
 #include "Phong.h"
 #include "SinhVien.h"
-#include "CoDauCach.h"
+#include "XuLiChuoi.h"
 #include "XuLi.h"
 using namespace std;
 int main() {

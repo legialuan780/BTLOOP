@@ -1,4 +1,4 @@
-#include "CoDauCach.h"
+#include "XuLiChuoi.h"
 bool CoDauCach(string chuoi) {
     for (char kyTu : chuoi) {
         if (kyTu == ' ') {
@@ -6,4 +6,9 @@ bool CoDauCach(string chuoi) {
         }
     }
     return false;
+}
+bool kiemTraSDT(string  sdt) {
+    for (char kyTu : sdt) 
+        if (!isdigit(kyTu)) return false ;
+    return true;
 }

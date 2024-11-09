@@ -11,6 +11,7 @@ vector<SinhVien> Phong::getDsSV() { return DsSV; }
 vector<SinhVien>* Phong::getDsSVPtr() { return &DsSV; }
 
 void Phong::setTenPhong(string tenPhong) { TenPhong = tenPhong; }
+void Phong::setThuTuPhong(int thuTuPhong) { ThuTuPhong = thuTuPhong; }
 void Phong::setSoNguoiToiDa(int soNguoi) { SoNguoiToiDa = soNguoi; }
 void Phong::setSoNguoiHienTai(int soNguoi) { SoNguoiHienTai = soNguoi; }
 void Phong::setSoDienCu(float soDienCu) { SoDienCu = soDienCu; }
@@ -53,7 +54,7 @@ void Phong::XuatDsSinhVien(string tenDay) {
 
 	for (int i = 0; i < DsSV.size(); i++) {
 		//    	if (i==0) 
-		cout << setw(5) << tenDay << " |" << setw(8) << TenPhong << " |";
+		cout <<"|"<< setw(5) << tenDay << " |" << setw(8) << TenPhong << " |";
 		DsSV[i].XuatBang();
 	}
 }

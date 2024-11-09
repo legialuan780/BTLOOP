@@ -13,7 +13,6 @@ class Day
 {
 private:
 	int ThuTuDay;
-	static int ThuTuDayMoi;
 	string TenDay;
 	string LoaiDay;
 	vector<Phong> DsPhong;
@@ -22,6 +21,7 @@ public:
 
 	string getTenDay();
 	string getLoaiDay();
+	int getThuTuDay();
 	int getSoLuongPhong();
 	vector<Phong> getDsPhong();
 	vector<Phong>* getDsPhongPtr();
@@ -33,13 +33,13 @@ public:
 	void NhapSinhVien(SinhVien sv, int thuTuPhong);
 	void XuatDsSinhVien();
 
-	void XuatThongTinDay();
+	//void XuatThongTinDay();
 	void XuatTenPhong(int thuTuDay, int thuTuPhong);
 
 	bool KiemTraMSSV(string mssv);
 	bool KiemTraPhongTrong(int thuTuDay, int thuTuPhong, string gioiTinh);
 
-	void TimSinhVienTheoTen(string ten, int thuTuDay);
+	//void TimSinhVienTheoTen(string ten, int thuTuDay);
 	float TraCuuTienDien(int thuTuDay, int thuTuPhong);
 	bool TraCuuTrangThaiTienDien(int thuTuDay, int thuTuPhong);
 	void ThanhToanTienDien(int thuTuPhong);

@@ -1,6 +1,6 @@
 #pragma once
 #include "Day.h"
-#include "CoDauCach.h"
+#include "XuLiChuoi.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -26,6 +26,7 @@ public:
     void XuatDsSinhVienTheoBangChuCai();
     void XuatDsSinhVienTheoDayPhong();
     void XemDanhSachSV2();
+    void LuuDanhSachSV();
 
     void XuatDsPhongTrong(string gioiTinh, int& dem);
 
@@ -49,15 +50,12 @@ public:
     void XemTinhTrangDongTienDien();
 
     void ThanhToanTienDien();
-    bool KiemTraTenPhong(string tenDay, string tenPhong);
     float TraCuuTienDien(int thuTuDay, int thuTuPhong);
     bool TraCuuTrangThaiTienDien(int thTuDay, int thuTuPhong);
 
     friend bool CoDauCach(string chuoi);
 
     void DangKySV();
-    void XemDanhSachSV();
-
     void DuyetSV();
 };
 
