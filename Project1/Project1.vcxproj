@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CoDauCach.cpp" />
+    <ClCompile Include="XuLiChuoi.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Day.cpp" />
     <ClCompile Include="KTX.cpp" />
@@ -137,7 +137,7 @@
     <ClCompile Include="XuLi.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CoDauCach.h" />
+    <ClInclude Include="XuLiChuoi.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Day.h" />
     <ClInclude Include="KTX.h" />

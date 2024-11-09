@@ -24,30 +24,30 @@ void Date::Nhap() {
 	int check = 1;
 	do {
 		do {
-			cout << "Nhap ngay sinh: "; cin >> ngay;
-			if (ngay < 1 or ngay>31) cout << "Nhap lai ngay!" << endl;
+			cout << "\t\t\t\t\tNhap ngay sinh: "; cin >> ngay;
+			if (ngay < 1 or ngay>31) cout << "\t\t\t\t\tNhap lai ngay!" << endl;
 		} while (ngay < 1 or ngay>31);
 		do {
-			cout << "Nhap thang: "; cin >> thang;
-			if (thang < 1 or thang>12) cout << "Nhap lai thang!" << endl;
+			cout << "\t\t\t\t\tNhap thang: "; cin >> thang;
+			if (thang < 1 or thang>12) cout << "\t\t\t\t\tNhap lai thang!" << endl;
 		} while (thang < 1 or thang>12);
 		do {
-			cout << "Nhap nam: "; cin >> nam;
-			if (nam < 1900 or nam>2025) cout << "Nhap lai nam!" << endl;
+			cout << "\t\t\t\t\tNhap nam: "; cin >> nam;
+			if (nam < 1900 or nam>2025) cout << "\t\t\t\t\tNhap lai nam!" << endl;
 		} while (nam < 1900 or nam>2025);
 		if (nam % 4 == 0 and thang == 2 and ngay > 29) check = 0;
 		else if (nam % 4 != 0 and thang == 2 and ngay > 28) check = 0;
 		else if ((thang == 4 or thang == 6 or thang == 9 or thang == 11) and ngay > 30) check = 0;
 		else check = 1;
-		if (check == 0) cout << "Ngay da nhap khong hop le" << "\nVui long nhap lai!" << endl;
+		if (check == 0) cout << "\t\t\t\t\tNgay da nhap khong hop le" << "\n\t\t\t\t\tVui long nhap lai!" << endl;
 	} while (check == 0);
 }
 void Date::Xuat() {
 	if (ngay < 10) cout << "0" << ngay;
 	else cout << ngay;
-	cout << " / ";
+	cout << "/";
 	if (thang < 10) cout << "0" << thang;
 	else cout << thang;
-	cout << " / ";
+	cout << "/";
 	cout << nam;
 }

@@ -33,7 +33,7 @@
     <ClCompile Include="KTX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CoDauCach.cpp">
+    <ClCompile Include="XuLiChuoi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="XuLi.cpp">
@@ -56,7 +56,7 @@
     <ClInclude Include="KTX.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CoDauCach.h">
+    <ClInclude Include="XuLiChuoi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="XuLi.h">

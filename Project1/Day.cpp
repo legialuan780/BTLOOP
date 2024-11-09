@@ -1,7 +1,8 @@
 ﻿#include "Day.h"
-int Day::ThuTuDayMoi = 0;
+
 string Day::getTenDay() { return TenDay; }
 string Day::getLoaiDay() { return LoaiDay; }
+int Day::getThuTuDay() { return ThuTuDay; }
 int Day::getSoLuongPhong() { return SoLuongPhong; }
 vector<Phong>Day::getDsPhong() { return DsPhong; }
 vector<Phong>* Day::getDsPhongPtr() { return &DsPhong; }

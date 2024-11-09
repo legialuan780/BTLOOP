@@ -8,7 +8,7 @@
 #include <iomanip>
 #include "Date.h"
 #include "SinhVien.h"
-#include "CoDauCach.h"
+#include "XuLiChuoi.h"
 using namespace std;
 class SinhVien
 {
@@ -45,5 +45,6 @@ public:
     bool KiemTraKhoa();
     bool TimSinhVienTheoTen(string ten);
     friend bool CoDauCach(string chuoi);
+    friend bool kiemTraSDT(string sdt);
 };
 

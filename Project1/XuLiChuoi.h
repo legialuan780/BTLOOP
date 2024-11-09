@@ -6,5 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include <iomanip>
+#include <cctype>
 using namespace std;
 bool CoDauCach(string chuoi);
+bool kiemTraSDT(string sdt);

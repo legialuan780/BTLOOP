@@ -41,49 +41,50 @@ string SinhVien::getTen() {
 }
 
 void SinhVien::Nhap() {
-    cout << "Nhap ho ten: ";
+    cout << "\t\t\t\t\tNhap ho ten: ";
     getline(cin, HoTen);
     do {
-        cout << "Nhap MSSV: ";
+        cout << "\t\t\t\t\tNhap MSSV: ";
         getline(cin, MSSV);
-        if (MSSV.size() != 10 or CoDauCach(MSSV)) cout << "MSSV khong hop le!" << endl << "Vui long nhap lai!" << endl << endl;
+        if (MSSV.size() != 10 or CoDauCach(MSSV)) cout << "\t\t\t\t\tMSSV khong hop le!" << endl << "\t\t\t\t\tVui long nhap lai!" << endl << endl;
     } while (MSSV.size() != 10 or CoDauCach(MSSV));
 
-    cout << "Nhap dia chi: ";
+    cout << "\t\t\t\t\tNhap dia chi: ";
     getline(cin, DiaChi);
-    cout << "Nhap lop: ";
+    cout << "\t\t\t\t\tNhap lop: ";
     getline(cin, Lop);
 
-    cout << "Nhap khoa [Kxx]: ";
+    cout << "\t\t\t\t\tNhap khoa [Kxx]: ";
     getline(cin, Khoa);
 
 
     do {
-        cout << "Nhap gioi tinh: ";
+        cout << "\t\t\t\t\tNhap gioi tinh: ";
         getline(cin, GioiTinh);
-        if (GioiTinh != "Nam" and GioiTinh != "Nu") cout << "Gioi tinh khong hop le!" << endl << "Vui long nhap lai! [Nam/Nu]" << endl << endl;
+        if (GioiTinh != "Nam" and GioiTinh != "Nu") cout << "\t\t\t\t\tGioi tinh khong hop le!" << endl << "\t\t\t\t\tVui long nhap lai! [Nam/Nu]" << endl << endl;
     } while (GioiTinh != "Nam" and GioiTinh != "Nu");
 
     do {
-        cout << "Nhap so dien thoai: ";
+        cout << "\t\t\t\t\tNhap so dien thoai: ";
         getline(cin, SDT);
-    } while (SDT.size() != 10);
+        if (SDT.size() != 10 or !kiemTraSDT(SDT)) cout << "\t\t\t\t\tSDT khong hop le!" << endl << "\t\t\t\t\tVui long nhap lai!" << endl << endl;
+    } while (SDT.size() != 10 or !kiemTraSDT(SDT));
     NgaySinh.Nhap();
     cin.ignore();  // Để bỏ qua ký tự xuống dòng sau khi nhập số
 }
 
 void SinhVien::XuatDonGian() {
-    cout << setw(18) << HoTen << " |" << setw(13) << MSSV << " |" << setw(9) << Lop << " |" << setw(8) << Khoa << " |" << endl;;
+    cout << setw(23) << HoTen << " |" << setw(18) << MSSV << " |" << setw(13) << Lop << " |" << setw(8) << Khoa << " |" << endl;;
 }
 
 void SinhVien::XuatBang() {
-    cout << setw(18) << HoTen << " |" << setw(13) << MSSV << " |" << setw(9) << Lop << " |" << setw(8) << Khoa << " |" << setw(13) << DiaChi << " |" << setw(8) << GioiTinh << " |" << setw(13) << SDT << " |   ";
+    cout << setw(20) << HoTen << " |" << setw(13) << MSSV << " |" << setw(11) << Lop << " |" << setw(7) << Khoa << " |" << setw(15) << DiaChi << " |" << setw(8) << GioiTinh << " |" << setw(13) << SDT << " |   ";
     NgaySinh.Xuat();
     cout << " |" << endl;
 }
 bool SinhVien::KiemTraKhoa() {
     if (!(Khoa == "K65" or Khoa == "K64" or Khoa == "K63" or Khoa == "K62")) {
-        cout << "Khoa da nhap khong hop le hoac vuot qua khoa quy dinh cua KTX";
+        cout << "\t\t\t\t\tKhoa da nhap khong hop le hoac vuot qua khoa quy dinh cua KTX";
         return false;
     }
     return true;
