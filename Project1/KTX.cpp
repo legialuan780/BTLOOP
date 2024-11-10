@@ -493,61 +493,61 @@ bool KTX::TraCuuTrangThaiTienDien(int thuTuDay, int thuTuPhong) {
 void KTX::ThanhToanTienDien() {
 	string mssv, tenDay, tenPhong, choice;
 	float soTien;
-	cout << "\n---Nhap thong tin---" << endl;
+	cout << "\n\t\t\t\t\t---Nhap thong tin---" << endl;
 	do {
-		cout << "->Nhap MSSV: ";
+		cout << "\t\t\t\t\t->Nhap MSSV: ";
 		getline(cin, mssv);
-		if (mssv.size() != 10 or CoDauCach(mssv)) cout << "MSSV khong hop le!" << endl << "Vui long nhap lai!" << endl << endl;
+		if (mssv.size() != 10 or CoDauCach(mssv)) cout << "\t\t\t\t\tMSSV khong hop le!" << endl << "\t\t\t\t\tVui long nhap lai!" << endl << endl;
 	} while (mssv.size() != 10 or CoDauCach(mssv));
 	do {
-		cout << "->Nhap ten day: ";
+		cout << "\t\t\t\t\t->Nhap ten day: ";
 		getline(cin, tenDay);
 		if (tenDay != "D1" and tenDay != "D2" and tenDay != "N1" and tenDay != "N2") {
-			cout << "Ten day da nhap khong dung!" << endl << "Vui long nhap lai!" << endl;
-			cout << "[D1, D2, N1, N2]" << endl;
+			cout << "\t\t\t\t\tTen day da nhap khong dung!" << endl << "\t\t\t\t\tVui long nhap lai!" << endl;
+			cout << "\t\t\t\t\t[D1, D2, N1, N2]" << endl;
 		}
 	} while (tenDay != "D1" and tenDay != "D2" and tenDay != "N1" and tenDay != "N2");
 
 	do {
-		cout << "->Nhap ten phong: ";
+		cout << "\t\t\t\t\t->Nhap ten phong: ";
 		getline(cin, tenPhong);
 		if (tenPhong != "P01" and tenPhong != "P02" and tenPhong != "P03" and tenPhong != "P04") {
-			cout << "Ten phong da nhap khong dung!" << endl << "Vui long nhap lai!" << endl;
-			cout << "[P01, P02, P03, P04]" << endl;
+			cout << "\t\t\t\t\tTen phong da nhap khong dung!" << endl << "\t\t\t\t\tVui long nhap lai!" << endl;
+			cout << "\t\t\t\t\t[P01, P02, P03, P04]" << endl;
 		}
 	} while (tenPhong != "P01" and tenPhong != "P02" and tenPhong != "P03" and tenPhong != "P04");
-	cout << endl << tenDay << "-" << tenPhong << "\t Tien dien: " << TraCuuTienDien(TenDayInt(tenDay), TenPhongInt(tenPhong)) << "\tTrang thai: ";
+	cout << endl <<"\t\t\t\t\t" << tenDay << "-" << tenPhong << "\t Tien dien: " << TraCuuTienDien(TenDayInt(tenDay), TenPhongInt(tenPhong)) << "\tTrang thai: ";
 	if (TraCuuTrangThaiTienDien(TenDayInt(tenDay), TenPhongInt(tenPhong)) == 0) {
 		cout << "Chua dong" << endl;
 	}
 	else {
 		cout << "Da dong" << endl;
-		cout << "Phong cua ban da dong tien roi" << endl;
+		cout << "\t\t\t\t\tPhong cua ban da dong tien roi" << endl;
 		return;
 	}
 
 	do {
-		cout << "->Nhap so tien: ";
+		cout << "\t\t\t\t\t->Nhap so tien: ";
 		cin >> soTien; cin.ignore();
 		if (soTien != TraCuuTienDien(TenDayInt(tenDay), TenPhongInt(tenPhong)))
-			cout << "So tien da nhap khong dung!" << endl << "Vui long nhap lai!" << endl << endl;
+			cout << "\t\t\t\t\tSo tien da nhap khong dung!" << endl << "\t\t\t\t\tVui long nhap lai!" << endl << endl;
 	} while (soTien != TraCuuTienDien(TenDayInt(tenDay), TenPhongInt(tenPhong)));
 
 	do {
-		cout << "Nhan [y] de xac nhan giao dich hoac [n] de huy: ";
+		cout << "\t\t\t\t\tNhan [y] de xac nhan giao dich hoac [n] de huy: ";
 		getline(cin, choice);
-		if (choice != "y" and choice != "n") cout << "Cu phap khong dung!" << endl << "Vui long nhap lai!" << endl << endl;
+		if (choice != "y" and choice != "n") cout << "\t\t\t\t\tCu phap khong dung!" << endl << "\t\t\t\t\tVui long nhap lai!" << endl << endl;
 	} while (choice != "y" and choice != "n");
 
 	if (choice == "n") {
-		cout << "Da huy giao dich" << endl;
+		cout << "\t\t\t\t\tDa huy giao dich" << endl;
 		return;
 	};
 
 	DsDay[TenDayInt(tenDay)].ThanhToanTienDien(TenPhongInt(tenPhong));
 	vector<Phong>* danhSachPhongPtr = DsDay[TenDayInt(tenDay)].getDsPhongPtr();
 	danhSachPhongPtr->at(TenPhongInt(tenPhong)).setTrangThai(true);
-	cout << "Thanh toan thanh cong!" << endl << endl;
+	cout << "\t\t\t\t\tThanh toan thanh cong!" << endl << endl;
 
 }
 
@@ -591,7 +591,7 @@ void KTX::DangKySV() {
 		if (!file.is_open()) {
 			cout << "\t\t\t\t\tKhong the mo file dang ky!" << endl;
 		}
-		file <<endl<< sv.getHoTen() << ",";
+		file << sv.getHoTen() << ",";
 		file << sv.getMSSV() << ",";
 		file << sv.getDiaChi() << ",";
 		file << sv.getLop() << ",";
