@@ -131,7 +131,7 @@ void SVChoice(KTX& ktx) {
 		case 3:
 			cout << "\n\t\t\t\t\t3. Thanh toan tien dien  " << endl << endl;
 			ktx.ThanhToanTienDien();
-			cout << endl;
+			cout << endl<<"\t\t\t\t\t";
 			system("pause");
 			XoaManHinh();
 			break;
